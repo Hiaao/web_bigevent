@@ -3,5 +3,4 @@
 $.ajaxPrefilter(function(options) {
     // 直接将路径拼接，当需要使用路径时，直接调用
     options.url = 'http://www.liulongbin.top:3007' + options.url;
-    return options.url;
 })
