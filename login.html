@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <!-- layui 设置ui的框架 -->
+    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
 </head>
+
 <body>
-    
+    <!-- log区域 -->
+    <div class="layui-main">
+        <img src="./assets/images/logo.png" alt="">
+    </div>
+
+    <!-- 登录注册区域 -->
+    <div class="loginAndRegBox">
+        <div class="title-box"></div>
+
+        <!-- 登录div -->
+        <div class="login-box">
+            <!-- 登录的表单 -->
+            <form class="layui-form" id="form_login">
+                <!-- 用户名框 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <!-- lay-verify属性具有验证效果 -->
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+
+                <!-- 密码框 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pass" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+
+                <!-- 登录按钮 -->
+                <div class="layui-form-item">
+                    <!-- lay-submit属性是提交按钮和普通按钮的区别 -->
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit
+                        lay-filter="formDemo">登录</button>
+                </div>
+
+                <!-- 注册链接 -->
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_reg">去注册账号</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- 注册div -->
+        <div class="reg-box">
+            <!-- 注册的表单 -->
+            <form class="layui-form" id="form_reg">
+                <!-- 用户名框 -->
+
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+
+                <!-- 密码框 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pass" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input" id="pwdA">
+                </div>
+
+                <!-- 确认密码框 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="repassword" required lay-verify="required|pass|repass" placeholder="请再次输入密码"
+                        autocomplete="off" class="layui-input" id="pwdB">
+                </div>
+
+                <!-- 注册按钮 -->
+                <div class="layui-form-item">
+                    <!-- lay-submit属性是提交按钮和普通按钮的区别 -->
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit
+                        lay-filter="formDemo">注册</button>
+                </div>
+
+                <!-- 登录链接 -->
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_login">登录账号</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 通过js文件使用lay的表单验证api -->
+    <script src="./assets/lib/layui/layui.all.js"></script>
+    <script src="./assets/lib/jquery.js"></script>
+    <!-- 自己封装的api -->
+    <script src="./assets/js/baseAPI.js"></script>
+
+    <script src="./assets/js/login.js"></script>
+
+    <script>
+       
+    </script>
 </body>
+
 </html>
